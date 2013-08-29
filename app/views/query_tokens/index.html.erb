@@ -1,0 +1,21 @@
+<h1>Listing query_tokens</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @query_tokens.each do |query_token| %>
+  <tr>
+    <td><%= link_to 'Show', query_token %></td>
+    <td><%= link_to 'Edit', edit_query_token_path(query_token) %></td>
+    <td><%= link_to 'Destroy', query_token, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Query token', new_query_token_path %>

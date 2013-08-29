@@ -1,0 +1,21 @@
+<%= form_for(@query_run) do |f| %>
+  <% if @query_run.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@query_run.errors.count, "error") %> prohibited this query_run from being saved:</h2>
+
+      <ul>
+      <% @query_run.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.text_field :data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

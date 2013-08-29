@@ -1,0 +1,27 @@
+development:
+  adapter: mysql2
+  database: sqlizer_dev
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  username: root
+
+test: &test
+  adapter: mysql2
+  database: sqlizer_test
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  username: root
+
+production:
+  adapter: mysql2
+  database: sqlizer_prod
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  username: foo
+  password: bar
+
+cucumber:
+  <<: *test
