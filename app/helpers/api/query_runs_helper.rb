@@ -1,0 +1,2 @@
+module Api::QueryRunsHelper
+end

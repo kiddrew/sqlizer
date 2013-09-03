@@ -8,14 +8,16 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.5"
+  gem "rspec-rails"
 end
 
 group :test do
+  gem "rspec"
   gem "cucumber-rails"
   gem "capybara"
   gem "database_cleaner"
   gem "rack-test"
+  gem 'factory_girl'
 end
 
 group :development do

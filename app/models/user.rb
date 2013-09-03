@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :username
-  store :data, accessors: [:password_hash, :name, :url, :company, :location, :gravatar_email], coder: JSON
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me
+  store :data, accessors: [:name, :url, :company, :location, :gravatar_email], coder: JSON
 end
